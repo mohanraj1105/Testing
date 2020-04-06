@@ -5,7 +5,6 @@ pipeline{
                 steps{
                         echo "hello world"
                      }
-                }
                 post{
                     always{
                         archiveArtifacts  artifacts: "**/*.xml",fingerprint: true
