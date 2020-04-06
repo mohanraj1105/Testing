@@ -2,10 +2,10 @@ pipeline{
     agent any
         stages{
             stage("test"){
-                step{
+                steps{
                     scripts{
                         echo "hello world"
-                    }
+                     }
                 }
                 post{
                     always{
