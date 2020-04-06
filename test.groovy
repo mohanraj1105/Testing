@@ -7,7 +7,7 @@ pipeline{
                      }
                 post{
                     always{
-                        robot 'results'
+                        junit 'results/*.xml'
                     }
                 }
 
