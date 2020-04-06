@@ -3,7 +3,6 @@ pipeline{
         stages{
             stage("test"){
                 steps{
-                    scripts{
                         echo "hello world"
                      }
                 }
