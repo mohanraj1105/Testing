@@ -4,7 +4,7 @@ pipeline{
             stage("test"){
                 steps{
                     script{
-                       sh "python3 -m --outputdir results  Testing/"
+                       sh "python3 -m robot.run --outputdir results  Testing/"
                         }
                      }
                 post{
