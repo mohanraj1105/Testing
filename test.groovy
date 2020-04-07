@@ -4,8 +4,8 @@ pipeline{
             stage("test"){
                 steps{
                     script{
-                        def val=pwd()
-                        println(val)
+                        sh "Testing"
+                        sh "pybot test.rpbot"
                         }
                      }
                 post{
