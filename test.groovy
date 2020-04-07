@@ -3,7 +3,6 @@ pipeline{
         stages{
             stage("test"){
                 steps{
-                    sh "../../PycharmProjects/mohan"
                     script{
                         def val=pwd()
                         println(val)
