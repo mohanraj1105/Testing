@@ -3,7 +3,9 @@ pipeline{
         stages{
             stage("test"){
                 steps{
-                    pybot "test.robot"
+                    script{
+                        def val=pwd()
+                        println(val)
                      }
                 post{
                     always{
