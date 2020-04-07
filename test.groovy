@@ -6,6 +6,7 @@ pipeline{
                     script{
                         def val=pwd()
                         println(val)
+                        }
                      }
                 post{
                     always{
