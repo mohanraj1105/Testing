@@ -5,7 +5,7 @@ pipeline{
                 steps{
                     script{
                         cd  "/Users/mp05/PycharmProjects/mohan"
-                        pybot "test.robot"
+                        python3 -m robot.run --outputdir results   /test.robot
                         }
                      }
                 post{
