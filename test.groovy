@@ -4,7 +4,7 @@ pipeline{
             stage("test"){
                 steps{
                     script{
-                        pybot test.robot
+                       sh "python3 -m --outputdir results  Testing/"
                         }
                      }
                 post{
