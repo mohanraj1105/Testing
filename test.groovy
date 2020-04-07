@@ -3,9 +3,7 @@ pipeline{
         stages{
             stage("test"){
                 steps{
-                    script{
-                        sh "pybot test.robot"
-                        }
+                    pybot "test.robot"
                      }
                 post{
                     always{
