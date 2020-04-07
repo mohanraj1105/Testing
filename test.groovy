@@ -5,6 +5,7 @@ pipeline{
                 steps{
                     script{
                         sh "pybot test.robot"
+                        }
                      }
                 post{
                     always{
