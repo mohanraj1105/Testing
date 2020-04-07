@@ -4,8 +4,7 @@ pipeline{
             stage("test"){
                 steps{
                     script{
-                        sh "Testing"
-                        sh "pybot test.rpbot"
+                        pybot test.robot
                         }
                      }
                 post{
