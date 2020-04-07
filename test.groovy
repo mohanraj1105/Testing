@@ -3,11 +3,13 @@ pipeline{
         stages{
             stage("test"){
                 steps{
-                        echo "hello world"
+                    script{
+                        cd "C:\Users\mp05\PycharmProjects\mohan"
+                        sh "pybot test.robot"
                      }
                 post{
                     always{
-                         archiveArtifacts artifacts: 'results/**/*.jar', fingerprint: true
+                         robot "results"
                     }
                 }
 
