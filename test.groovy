@@ -3,8 +3,7 @@ pipeline{
        stages{
             stage("test"){
                 steps{
-                    bat "cd C:/Users/mp05/PycharmProjects/mohan"
-                    bat "pybot test.robot"                    
+                    bat "python3 -m robot.run C:/Users/mp05/PycharmProjects/mohan/test.robot "                    
                     }
                 post{
                     always{
