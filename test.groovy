@@ -3,10 +3,9 @@ pipeline{
        stages{
             stage("test"){
                 step{
-                    scripts{
-                        echo "hello world"
+                    bat "C:\Users\mp05\PycharmProjects\mohan"
+                    bat "pybot test.robot"                    
                     }
-                }
                 post{
                     always{
                         archiveArtifacts  artifacts:  "**/*.xml",fingerprint: true
