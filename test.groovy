@@ -8,7 +8,7 @@ pipeline{
                 post{
                     always{
                         robot "reports"
-                        archiveArtifacts "*.png"
+                        archiveArtifacts "**/*.png"
                     }
                 }
             }
