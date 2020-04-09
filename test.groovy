@@ -7,8 +7,12 @@ pipeline{
                     }
                 post{
                     always{
+                        copyArtifact "**/*.js"
                         robot "reports"
+                         }
+                    failue{
                         archiveArtifacts "**/*.png"
+                        }
                     }
                 }
             }
