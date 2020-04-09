@@ -10,7 +10,7 @@ pipeline{
                         copyArtifact "**/*.js"
                         robot "reports"
                          }
-                    failue{
+                    failure{
                         archiveArtifacts "**/*.png"
                         }
                     }
