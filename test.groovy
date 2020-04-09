@@ -7,7 +7,6 @@ pipeline{
                     }
                 post{
                     always{
-                        copyArtifact "**/*.js"
                         robot "reports"
                          }
                     failure{
