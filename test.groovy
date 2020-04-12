@@ -19,7 +19,7 @@ pipeline{
                                         target: "test_1",
                                         selector:specific("${BUILD_NUMBER}"),
                                         flatten:true,
-                                        filter:"reports/*.html"
+                                        filter:"**/*.xml"
                          }
                     failure{
                         archiveArtifacts "**/*.png"
