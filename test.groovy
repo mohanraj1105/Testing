@@ -14,10 +14,10 @@ pipeline{
                 post{
                     always{
                         robot "reports"
-                        copyArtifact    projectName:"${JOB_NAME}"
-                                        target: "test_1"
-                                        selector:lastSuccessful()
-                                        flatten:True
+                        copyArtifact    projectName:"${JOB_NAME}",
+                                        target: "test_1",
+                                        selector:lastSuccessful(),
+                                        flatten:true,
                                         filter:"results/*.xml"
                          }
                     failure{
