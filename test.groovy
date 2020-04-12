@@ -18,7 +18,7 @@ pipeline{
                                         target: "test_1",
                                         selector:lastSuccessful(),
                                         flatten:true,
-                                        filter:"results/*.xml"
+                                        filter:"results/*.html"
                          }
                     failure{
                         archiveArtifacts "**/*.png"
