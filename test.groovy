@@ -15,11 +15,6 @@ pipeline{
                 post{
                     always{
                         robot "reports"
-                        copyArtifacts   projectName:"${JOB_NAME}",
-                                        target: "test_1",
-                                        selector:specific("${BUILD_NUMBER}"),
-                                        flatten:true,
-                                        filter:"**/*.xml"
                          }
                     failure{
                         archiveArtifacts "**/*.png"
