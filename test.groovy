@@ -14,7 +14,7 @@ pipeline{
                 post{
                     always{
                         robot "reports"
-                        copyArtifact    projectName:"${JOB_NAME}",
+                        copyArtifacts   projectName:"${JOB_NAME}",
                                         target: "test_1",
                                         selector:lastSuccessful(),
                                         flatten:true,
