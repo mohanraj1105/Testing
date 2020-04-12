@@ -9,6 +9,7 @@ pipeline{
                         def job = JOB_NAME
                         println(num)
                         println(job)
+                         
                     }
                 }
                 post{
@@ -16,7 +17,7 @@ pipeline{
                         robot "reports"
                         copyArtifacts   projectName:"${JOB_NAME}",
                                         target: "test_1",
-                                        selector:lastSuccessful(),
+                                        selector:specific("${BUILD_NUMBER}"),
                                         flatten:true,
                                         filter:"reports/*.html"
                          }
