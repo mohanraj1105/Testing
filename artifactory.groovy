@@ -8,7 +8,7 @@ pipeline{
         stage('artifactory download'){
             steps{
                 script{
-                    def server = Artifactory.newServer url:${artifactory_link} credentialsId=${credential}
+                    def server = Artifactory.newServer url:${artifactory_link},credentialsId=${credential}
                 }
             }
         }
