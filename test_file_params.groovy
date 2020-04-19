@@ -6,6 +6,7 @@ pipeline{
        }
     triggers{
         cron(triggering)
+    }
     stages{        
         stage('test'){
             steps{
