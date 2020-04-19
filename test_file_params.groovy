@@ -6,7 +6,7 @@ pipeline{
     stages{        
         stage('test'){
             steps{
-                echo "${params.name}"
+                echo "${params.env}"
             }
         }
    }
