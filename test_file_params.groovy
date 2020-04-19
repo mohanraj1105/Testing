@@ -3,7 +3,9 @@ pipeline{
     parameters{
         string(name:'env' , defaultValue='simu', description='')
     }
-    stages('test'){
+    stages{        
+        stage('test'){
         echo "${params.name}"
-    }
+        }
+   }
 }
