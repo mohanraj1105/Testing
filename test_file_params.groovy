@@ -10,7 +10,7 @@ pipeline{
     stages{        
         stage('test'){
             steps{
-                echo "${params.env}"
+                echo "${params.env}.toUppperCase()"
             }
         }
    }
