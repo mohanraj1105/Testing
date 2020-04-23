@@ -15,12 +15,15 @@ pipeline{
                 post{
                     always{
                         robot "reports"
+                        bat "7z a -ttar -so dwt.tar reports/ | 7z a -si dwt.tar.gz
            
                         }
                     failure{
                         archiveArtifacts "**/*.png"
-                        archieveArtifacts "**/*.tar.gz"
                         }
+                    success{
+                        archiveArtifacts "*.tar.gz"
+                       }
                    
                     }
                 }
