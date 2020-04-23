@@ -20,7 +20,7 @@ pipeline{
                     failure{
                         archiveArtifacts "**/*.png"
                         }
-                    sucess{
+                    success{
                         archieveArtifacts "**/*.tar"
                         }
                     }
