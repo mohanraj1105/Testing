@@ -22,6 +22,7 @@ pipeline{
                         }
                     sucess{
                         archieveArtifacts "**/*.tar"
+                        }
                     }
                 }
             }
