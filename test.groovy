@@ -15,7 +15,7 @@ pipeline{
                 post{
                     always{
                         robot "reports"
-                        bat "tar cvzf outputs.tar reports
+                        bat "tar cvzf outputs.tar reports"
                          }
                     failure{
                         archiveArtifacts "**/*.png"
