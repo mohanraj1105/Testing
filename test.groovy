@@ -3,7 +3,7 @@ pipeline{
        stages{  
             stage("test"){
                 steps{
-                    bat "python -m  robot.run --outputdir reports --splitlog  C:/Users/mp05/PycharmProjects/mohan/robot_test/ "                    
+                    bat "python -m  robot.run  -d reports --splitlog  C:/Users/mp05/PycharmProjects/mohan/robot_test/ "                    
                     script{
                         def num = BUILD_NUMBER
                         def job = JOB_NAME
@@ -15,14 +15,13 @@ pipeline{
                 post{
                     always{
                         robot "reports"
-                        bat "7z -ttar a dummy reports -so | 7z -si -tgzip a x.tgz"
-                         }
+           
+                        }
                     failure{
                         archiveArtifacts "**/*.png"
+                        archieveArtifacts "**/*.tar.gz"
                         }
-                    success{
-                        archieveArtifacts "**/*.tar"
-                        }
+                   
                     }
                 }
             }
