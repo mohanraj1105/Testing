@@ -20,10 +20,6 @@ pipeline{
                     failure{
                         archiveArtifacts "**/*.png"
                         }
-                    success{
-                        archiveArtifacts "*.tar.gz"
-                       }
-                   
                     }
                 }
             }
