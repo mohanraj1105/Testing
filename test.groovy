@@ -5,9 +5,10 @@ pipeline{
                 steps{
                     bat "python -m  robot.run  -d reports --splitlog  C:/Users/mp05/PycharmProjects/mohan/robot_test/ "                    
                     script{
-                        def num = BUILD_NUMBER
+                        def num = CurrentBuild
                         def job = JOB_NAME
                         println(num)
+                        println(CurrentBuild.PreviousBuild)
                         println(job)
                          
                     }
