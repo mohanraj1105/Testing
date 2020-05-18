@@ -15,9 +15,7 @@ pipeline{
                 }
                 post{
                     always{
-                        robot "reports"
-                        bat "7z a -ttar -so dwt.tar reports/ | 7z a -si dwt.tar.gz"
-           
+                        robot "reports"  
                         }
                     failure{
                         archiveArtifacts "**/*.png"
