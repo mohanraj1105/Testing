@@ -11,7 +11,7 @@ pipeline{
                         println(currentBuild.previousBuild.result)
                         println(currentBuild.previousBuild.duration)
                         if(currentBuild.previousBuild){
-                            println(currentBuild.previousBuild())
+                            println(currentBuild.getPreviousBuild())
                         }
                         println(job)
                          
