@@ -5,10 +5,10 @@ pipeline{
                 steps{
                     bat "python -m  robot.run  -d reports --splitlog  C:/Users/mp05/PycharmProjects/mohan/robot_test/ "                    
                     script{
-                        def num = CurrentBuild
+                        def num = BUILD_URL
                         def job = JOB_NAME
                         println(num)
-                        println(CurrentBuild.PreviousBuild)
+                        println(currentBuild.previousBuild)
                         println(job)
                          
                     }
