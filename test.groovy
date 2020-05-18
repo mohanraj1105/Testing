@@ -9,6 +9,10 @@ pipeline{
                         def job = JOB_NAME
                         println(num)
                         println(currentBuild.previousBuild.result)
+                        println(currentBuild.previousBuild.duration)
+                        if(currentBuild.previousBuild){
+                            println(currentBuild.previousBuild)
+                        }
                         println(job)
                          
                     }
