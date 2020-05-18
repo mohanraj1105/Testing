@@ -8,7 +8,7 @@ pipeline{
                         def num = BUILD_URL
                         def job = JOB_NAME
                         println(num)
-                        println(currentBuild.previousBuild.BUILT_ID)
+                        println(currentBuild.previousBuild.result)
                         println(job)
                          
                     }
