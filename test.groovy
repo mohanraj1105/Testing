@@ -31,9 +31,7 @@ pipeline{
                     }
                 }
            stage("rerun"){
-                    when{
-                        {env.RERUN == 'TRUE'}
-                    }
+               when {env.RERUN == 'TRUE'}
                steps{
                     bat "python -m robot.run --rerunfailed output.xml -d results C:/Users/mp05/PycharmProjects/mohan/robot_test/"
                     }
