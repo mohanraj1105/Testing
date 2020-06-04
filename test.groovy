@@ -4,6 +4,10 @@ pipeline{
             stage("test"){
                 steps{                   
                     script{
+                        catchError(buildResult:'SUCCESS',stageResult:'FAILURE')
+                        bat "python -m  robot.run  -d reports --splitlog  C:/Users/mp05/PycharmProjects/mohan/robot_test/"
+                        env.RERUN = 'N/A'
+                        println(job)
                         def num = BUILD_URL
                         def job = JOB_NAME
                         println(num)
@@ -12,10 +16,6 @@ pipeline{
                         if(currentBuild.previousBuild){
                             println(currentBuild.getPreviousBuild())                         
                         }
-                        catchError(buildResult:'SUCCESS',stageResult:'FAILURE')
-                        bat "python -m  robot.run  -d reports --splitlog  C:/Users/mp05/PycharmProjects/mohan/robot_test/"
-                        env.RERUN = 'N/A'
-                        println(job)
                          
                     }
                 }
