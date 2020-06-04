@@ -2,8 +2,7 @@ pipeline{
     agent any
        stages{  
             stage("test"){
-                steps{
-                    bat "python -m  robot.run  -d reports --splitlog  C:/Users/mp05/PycharmProjects/mohan/robot_test/ "                    
+                steps{                   
                     script{
                         def num = BUILD_URL
                         def job = JOB_NAME
@@ -11,12 +10,16 @@ pipeline{
                         println(currentBuild.previousBuild.result)
                         println(currentBuild.previousBuild.duration)
                         if(currentBuild.previousBuild){
-                            println(currentBuild.getPreviousBuild())
+                            println(currentBuild.getPreviousBuild())                         
                         }
+                        catchError(buildResult:'SUCCESS' stageResult:'FAILURE')
+                        bat "python -m  robot.run  -d reports --splitlog  C:/Users/mp05/PycharmProjects/mohan/robot_test/"
+                        env.RERUN = 'N/A'
                         println(job)
                          
                     }
                 }
+                    
                 post{
                     always{
                         robot "reports"  
@@ -26,6 +29,12 @@ pipeline{
                         }
                     }
                 }
+           stage("rerun"){
+                    when{
+                        expression{env.RERUN == 'True'}
+                    }
+                    bat "python -m robot.run --rerunfailed output.xml -d results C:/Users/mp05/PycharmProjects/mohan/robot_test/"
+                    }
             }
-       
+        
 }
