@@ -6,7 +6,7 @@ pipeline{
                     script{
                         catchError(buildResult:'SUCCESS',stageResult:'FAILURE'){
                         bat "python -m  robot.run  -d reports --splitlog  C:/Users/mp05/PycharmProjects/mohan/robot_test/"
-                        env.RERUN = 'N/A'
+                        env.RERUN = 'TRUE'
                         }
                         def num = BUILD_URL
                         def job = JOB_NAME
@@ -32,7 +32,7 @@ pipeline{
                 }
            stage("rerun"){
                     when{
-                        {stageResult == 'FAILURE'}
+                        {env.RERUN == 'TRUE'}
                     }
                steps{
                     bat "python -m robot.run --rerunfailed output.xml -d results C:/Users/mp05/PycharmProjects/mohan/robot_test/"
