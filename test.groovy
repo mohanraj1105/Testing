@@ -46,10 +46,10 @@ pipeline{
                     }
                post{
                   always{
-                      robot outputPath : 'reports',
-                            logFileName : 'log_2.html',
-                            outputFileName : 'output_2.xml',
-                            reportFileName : 'report_2.html'
+                      robot outputPath : *,
+                            logFileName : 'log.html',
+                            outputFileName : 'output.xml',
+                            reportFileName : 'report.html'
                   }
                }
            }
