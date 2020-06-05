@@ -24,9 +24,9 @@ pipeline{
                 post{
                     always{
                         robot outputPath : 'reports'
-                              logFileName : 'log_1.html'
-                              outputFileName : 'output_1.xml'
-                              reportFileName : 'report_1.html'
+                              logFileName : 'log.html'
+                              outputFileName : 'output.xml'
+                              reportFileName : 'report.html'
                         }
                     failure{
                         archiveArtifacts "**/*.png"
@@ -46,9 +46,9 @@ pipeline{
                post{
                    always{
                               robot outputPath : 'reports'
-                                    logFileName : 'log_2.html'
-                                    outputFileName : 'output_2.xml'
-                                    reportFileName : 'report_2.html'
+                                    logFileName : 'log.html'
+                                    outputFileName : 'output.xml'
+                                    reportFileName : 'report.html'
                           }
                    
                     }
