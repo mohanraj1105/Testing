@@ -51,9 +51,9 @@ pipeline{
                         bat "python -m robot.rebot --merge reports/output_1.xml reports/output_2.xml"
                         }
                     robot outputPath : 'reports',
-                    logFileName : 'log_2.html',
-                    outputFileName : 'output_2.xml',
-                    reportFileName : 'report_2.html'
+                          logFileName : 'log_2.html',
+                          outputFileName : 'output_2.xml',
+                          reportFileName : 'report_2.html'
                   }
                }
              }
