@@ -45,9 +45,9 @@ pipeline{
                     }
                post{
                    always{
-                              robot outputPath : 'reports'
-                                    logFileName : 'log.html'
-                                    outputFileName : 'output.xml'
+                              robot outputPath : 'reports',
+                                    logFileName : 'log.html',
+                                    outputFileName : 'output.xml',
                                     reportFileName : 'report.html'
                           }
                    
