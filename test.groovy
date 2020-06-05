@@ -46,7 +46,7 @@ pipeline{
                post{
                    always{
                        script{
-                           bat "python -m robot.rebot --merge output_1.xml output_2.xml"
+                           bat "python -m robot.rebot --merge reports/output_1.xml reports/output_2.xml"
                        }
                        robot outputPath : 'reports',
                        logFileName : 'log.html',
