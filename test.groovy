@@ -59,7 +59,7 @@ pipeline{
            }
            stage("archiving"){
                steps{
-                   echo " copying file
+                   echo "copying file"
                }
                 post{
                     always{
