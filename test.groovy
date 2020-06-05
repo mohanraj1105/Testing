@@ -51,6 +51,7 @@ pipeline{
                      bat "python -m robot.rebot --merge reports/output_1.xml reports/output_2.xml"
                         }
                   }
+               }
                post{
                    always{
                        robot outputPath : 'DEMO',
