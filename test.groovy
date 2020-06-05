@@ -47,20 +47,15 @@ pipeline{
                }
                post{
                   always{ 
-                  script{
-                     bat "python -m robot.rebot --merge reports/output_1.xml reports/output_2.xml"
+                    script{
+                        bat "python -m robot.rebot --merge reports/output_1.xml reports/output_2.xml"
                         }
+                    robot outputPath : 'DEMO',
+                    logFileName : 'log.html',
+                    outputFileName : 'output.xml',
+                    reportFileName : 'report.html'
                   }
                }
-               post{
-                   always{
-                       robot outputPath : 'DEMO',
-                       logFileName : 'log.html',
-                       outputFileName : 'output.xml',
-                       reportFileName : 'report.html'    
-                   }
-               }
-                    }
-               }
-                       
+             }
            }
+    }
