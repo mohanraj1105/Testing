@@ -23,7 +23,10 @@ pipeline{
                     
                 post{
                     always{
-                        robot "reports"  
+                        robot OutputPath : 'reports'
+                              logFileName : 'log_1.html'
+                              outputFileName : 'output_1.xml'
+                              reportFileName : 'report_1.html
                         }
                     failure{
                         archiveArtifacts "**/*.png"
@@ -38,8 +41,19 @@ pipeline{
            stage("rerun"){
                when {environment name:'RERUN',value:'TRUE'}
                steps{
-                    bat "python -m robot.run --rerunfailed reports/output.xml -d results C:/Users/mp05/PycharmProjects/mohan/robot_test/"
+                    bat "python -m robot.run --rerunfailed reports/output.xml -d reports C:/Users/mp05/PycharmProjects/mohan/robot_test/"
                     }
+               post{
+                   always{
+                              robot OutputPath : 'reports'
+                              logFileName : 'log_2.html'
+                              outputFileName : 'output_2.xml'
+                              reportFileName : 'report_2.html
+                          }
+                   
+                    }
+               
+                       
            }
        }
 }
