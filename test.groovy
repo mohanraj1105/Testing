@@ -29,12 +29,14 @@ pipeline{
                         archiveArtifacts "**/*.png"
                         }
                     success{
-                        env.RERUN = 'FALSE'
+                        steps{
+                            env.RERUN = 'FALSE'
+                            }
                          }
                     }
                 }
            stage("rerun"){
-               when {env.RERUN == 'TRUE'}
+               when {name:env.RERUN,value:'TRUE'}
                steps{
                     bat "python -m robot.run --rerunfailed output.xml -d results C:/Users/mp05/PycharmProjects/mohan/robot_test/"
                     }
