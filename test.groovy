@@ -57,7 +57,10 @@ pipeline{
                   }
                }
            }
-           stage('archiving'){
+           stage("archiving"){
+               steps{
+                   echo " copying file
+               }
                 post{
                     always{
                         archiveArtifacts "*.xml,*.html"
