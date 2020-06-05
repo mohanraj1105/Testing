@@ -57,10 +57,12 @@ pipeline{
                   }
                }
            }
-        post{
-           always{
-               archiveArtifacts "*.xml,*.html"
+           stage('archiving'){
+                post{
+                    always{
+                        archiveArtifacts "*.xml,*.html"
                }
            }
         }
     }
+}
