@@ -23,10 +23,10 @@ pipeline{
                     
                 post{
                     always{
-                        robot outputPath : 'reports'
-                              logFileName : 'log.html'
-                              outputFileName : 'output.xml'
-                              reportFileName : 'report.html'
+                        robot outputPath : 'reports',
+                              logFileName : 'log_1.html',
+                              outputFileName : 'output_1.xml',
+                              reportFileName : 'report_1.html'
                         }
                     failure{
                         archiveArtifacts "**/*.png"
