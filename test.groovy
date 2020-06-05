@@ -56,10 +56,11 @@ pipeline{
                         }
                   }
                }
-             }
            post{
-               always{
+              always{
                    archiveArtifacts "*.xml,*.html"
+             }
+
                }
            }
         }
