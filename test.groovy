@@ -28,6 +28,9 @@ pipeline{
                     failure{
                         archiveArtifacts "**/*.png"
                         }
+                    success{
+                        env.RERUN = 'FALSE'
+                         }
                     }
                 }
            stage("rerun"){
