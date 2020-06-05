@@ -56,7 +56,7 @@ pipeline{
                    reportFileName : 'report.html'    
                    
                     }
-               
+               }
                        
            }
        }
