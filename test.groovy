@@ -53,7 +53,8 @@ pipeline{
                             reportFileName : 'report_2.html'
                     script{
                         bat "python -m robot.rebot --merge --output reports/output.xml -l reports/log.html -r reports/report.html reports/output_1.xml reports/output_2.xml"
-                        }
+                        bat "exit 0" 
+                    }
                   }
                }
            }
