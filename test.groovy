@@ -56,10 +56,10 @@ pipeline{
                         }
                   }
                }
-           post{
+           }
+         post{
               always{
                    archiveArtifacts "*.xml,*.html"
-             }
 
                }
            }
