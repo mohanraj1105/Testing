@@ -3,11 +3,11 @@ pipeline{
        stages{  
             stage("test"){
                 steps{
-                     env.RERUN = 'TRUE'
-                     catchError(buildResult:'SUCCESS',stageResult:'FAILURE'){
-                     bat "python -m  robot.run  -d reports --splitlog --output output_1.xml --log log_1.html --report report_1.html C:/Users/mp05/PycharmProjects/mohan/robot_test/"
-                     }
                     script{
+                        env.RERUN = 'TRUE'
+                        catchError(buildResult:'SUCCESS',stageResult:'FAILURE'){
+                        bat "python -m  robot.run  -d reports --splitlog --output output_1.xml --log log_1.html --report report_1.html C:/Users/mp05/PycharmProjects/mohan/robot_test/"
+                         }
                         def num = BUILD_URL
                         def job = JOB_NAME
                         println(num)
@@ -18,9 +18,7 @@ pipeline{
                             println(currentBuild.getPreviousBuild())                         
                         }
                         }
-                    }
-                }
-                    
+                    }   
                 post{
                     always{
                         robot outputPath : 'reports',
