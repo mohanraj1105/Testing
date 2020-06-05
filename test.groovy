@@ -6,7 +6,7 @@ pipeline{
                     script{
                         env.RERUN = 'TRUE'
                         catchError(buildResult:'SUCCESS',stageResult:'FAILURE'){
-                        bat "python -m  robot.run  -d reports --splitlog  C:/Users/mp05/PycharmProjects/mohan/robot_test/"
+                        bat "python -m  robot.run  -d reports --splitlog --output output_1.xml --log log_1.html --report report_1.html C:/Users/mp05/PycharmProjects/mohan/robot_test/"
                         }
                         def num = BUILD_URL
                         def job = JOB_NAME
@@ -41,7 +41,8 @@ pipeline{
            stage("rerun"){
                when {environment name:'RERUN',value:'TRUE'}
                steps{
-                    bat "python -m robot.run --rerunfailed reports/output.xml -d reports C:/Users/mp05/PycharmProjects/mohan/robot_test/"
+                    bat "python -m robot.run --rerunfailed reports/output.xml --output output_2.xml --log log_2.html --report report_2.html -d reports C:/Users/mp05/PycharmProjects/mohan/robot_test/"
+                    bat "python -m robot.rebot --merge output_1.xml output_2.xml log_1.html log_2.html report_1.html report_2.html"
                     }
                post{
                    always{
