@@ -41,32 +41,17 @@ pipeline{
            stage("rerun"){
                when {environment name:'RERUN',value:'TRUE'}
                steps{
-                   script{
                    bat "python -m robot.run --rerunfailed reports/output.xml --output output_2.xml --log log_2.html --report report_2.html -d reports C:/Users/mp05/PycharmProjects/mohan/robot_test/"
-                        }
-               }
+                   bat "python -m robot.rebot --merge reports/output_1.xml reports/output_2.xml"
+                    }
                post{
                   always{
                       robot outputPath : 'reports',
                             logFileName : 'log_2.html',
                             outputFileName : 'output_2.xml',
                             reportFileName : 'report_2.html'
-                    script{
-                        bat "python -m robot.rebot --merge reports/output_1.xml reports/output_2.xml"
-                        bat "exit 0" 
-                    }
                   }
                }
            }
-           stage("archiving"){
-               steps{
-                   echo "copying file"
-               }
-                post{
-                    always{
-                        archiveArtifacts "*.xml,*.html"
-               }
-           }
-        }
     }
 }
