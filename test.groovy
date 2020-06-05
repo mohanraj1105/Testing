@@ -26,7 +26,7 @@ pipeline{
                         robot OutputPath : 'reports'
                               logFileName : 'log_1.html'
                               outputFileName : 'output_1.xml'
-                              reportFileName : 'report_1.html
+                              reportFileName : 'report_1.html'
                         }
                     failure{
                         archiveArtifacts "**/*.png"
@@ -48,7 +48,7 @@ pipeline{
                               robot OutputPath : 'reports'
                               logFileName : 'log_2.html'
                               outputFileName : 'output_2.xml'
-                              reportFileName : 'report_2.html
+                              reportFileName : 'report_2.html'
                           }
                    
                     }
