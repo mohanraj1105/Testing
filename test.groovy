@@ -53,7 +53,7 @@ pipeline{
                   }
                post{
                    always{
-                       robot outputPath : 'reports',
+                       robot outputPath : 'DEMO',
                        logFileName : 'log.html',
                        outputFileName : 'output.xml',
                        reportFileName : 'report.html'    
@@ -64,4 +64,5 @@ pipeline{
                        
            }
        }
+}
 }
