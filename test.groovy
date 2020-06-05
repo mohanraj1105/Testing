@@ -57,10 +57,9 @@ pipeline{
                   }
                }
            }
-         post{
-              always{
-                   archiveArtifacts "*.xml,*.html"
-
+        post{
+           always{
+               archiveArtifacts "*.xml,*.html"
                }
            }
         }
