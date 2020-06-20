@@ -8,6 +8,8 @@ pipeline{
                         catchError(buildResult:'SUCCESS',stageResult:'FAILURE'){
                         bat "python -m  robot.run  -d reports --splitlog --output output_1.xml --log log_1.html --report report_1.html C:/Users/mp05/PycharmProjects/mohan/robot_test/"
                          }
+                        def file = readProperties file:'C:/Users/mp05/Desktop/build_fail.txt'
+                        println(file)
                         def num = BUILD_URL
                         def job = JOB_NAME
                         println(num)
