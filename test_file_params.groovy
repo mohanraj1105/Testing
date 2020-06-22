@@ -11,8 +11,10 @@ pipeline{
         stage('test'){
             steps{
                 echo "${params.env.toUpperCase()}"
-                def docker_image = docker.build('image_ID = ${env.Build_Number}')
-            }
+                script{
+                    def docker_image = docker.build('image_ID = ${env.Build_Number}')
+                }
+                }
         }
    }
 }
