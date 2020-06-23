@@ -4,9 +4,6 @@ pipeline{
     parameters{
         string(name:'env' , defaultValue:'simu', description:'')
        }
-    environment{
-        path = "C:/Program Files/Docker Toolbox"
-    }
     triggers{
         cron(triggering)
     }
@@ -16,7 +13,7 @@ pipeline{
                 echo "${params.env.toUpperCase()}"
                 script{
                     def docker_image = docker.build("image_id:${env.BUILD_ID}")
-                    docker_image.inside('-v ${path}:image_id'){
+                    docker_image.inside('-v image_id'){
                         sh 'ls -la'
                     }
                 }
