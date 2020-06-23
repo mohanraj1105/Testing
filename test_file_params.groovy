@@ -12,7 +12,7 @@ pipeline{
             steps{
                 echo "${params.env.toUpperCase()}"
                 script{
-                    def docker_image = docker.build("image_id:${env.BUILD_ID}","C:/Program Files (x86)/Docker Toolbox")
+                    def docker_image = docker.build("image_id:${env.BUILD_ID}"
                     docker_image.inside('-v image_id'){
                         sh 'ls -la'
                     }
