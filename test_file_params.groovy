@@ -14,7 +14,9 @@ pipeline{
                 script{
                     def docker_image = docker.build("image_id:verification")
                     docker_image.inside{
-                        sh 'ls -la'
+                        stage(test){
+                            sh 'ls -la'
+                        }
                     }
                 }
             }
