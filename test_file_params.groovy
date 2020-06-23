@@ -6,6 +6,7 @@ pipeline{
        }
     environment{
         path = "C:/Program Files/Docker Toolbox"
+    }
     triggers{
         cron(triggering)
     }
@@ -19,7 +20,7 @@ pipeline{
                         sh 'ls -la'
                     }
                 }
-                }
+            }
         }
    }
 }
