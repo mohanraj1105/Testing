@@ -16,7 +16,7 @@ pipeline{
                 echo "${params.env.toUpperCase()}"
                 script{
                     def docker_image = docker.build("image_id:${env.BUILD_ID}")
-                    docker_image.inside('-v ${path}:/image_id'){
+                    docker_image.inside('-v ${path}:image_id'){
                         sh 'ls -la'
                     }
                 }
