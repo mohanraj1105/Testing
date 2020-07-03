@@ -7,6 +7,7 @@
       <mapping pattern="aaadddd.py" type="PLAIN_TEXT" />
       <mapping pattern="train5.py" type="PLAIN_TEXT" />
       <mapping ext="groovy" type="PLAIN_TEXT" />
+      <mapping ext="sqlite3" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
 </application>
